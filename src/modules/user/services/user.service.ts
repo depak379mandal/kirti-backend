@@ -20,7 +20,11 @@ export class UserService {
   ) {}
 
   async create(userCreateDto: UserCreateDto) {
-    const user = User.create(instanceToPlain(userCreateDto));
+    const user = User.create({
+      ...userCreateDto,
+      email_verified_at: new Date(),
+      is_active: true,
+    });
     return this.userRepository.save(user);
   }
 

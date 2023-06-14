@@ -13,7 +13,7 @@
     "migration:run": "npm run typeorm migration:run",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -22,7 +22,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "typeorm-ts-node-commonjs -d ormconfig.ts migration:run && jest --config ./test/jest-e2e.json",
-    "docker:shell": "docker exec -it danimai_app /bin/bash"
+    "docker:shell": "docker exec -it danimai_app /bin/bash",
+    "seed:books": "ts-node scripts/seed-books.script.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.154.0",
@@ -53,7 +54,7 @@
     "typeorm": "^0.3.7"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.5.0",
+    "@faker-js/faker": "^8.0.2",
     "@nestjs/cli": "^9.1.8",
     "@nestjs/schematics": "^9.0.3",
     "@nestjs/testing": "^9.2.0",

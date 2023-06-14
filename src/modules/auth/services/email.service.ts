@@ -23,13 +23,13 @@ export class EmailService {
 
   async register(registerDto: RegisterRequestDto) {
     const user = await this.userService.create(registerDto);
-    const token = await this.tokenService.create(user, 'REGISTER_VERIFY');
-    await this.mailService.user_registation({
-      to: user.email,
-      data: {
-        hash: token.token,
-      },
-    });
+    //   const token = await this.tokenService.create(user, 'REGISTER_VERIFY');
+    //   await this.mailService.user_registation({
+    //     to: user.email,
+    //     data: {
+    //       hash: token.token,
+    //     },
+    //   });
   }
 
   async verify(verifyDto: EmailVerifyRequestDto) {

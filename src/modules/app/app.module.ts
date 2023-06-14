@@ -11,8 +11,9 @@ import { MailerConfigClass } from '../mail/services/mailer_config.service';
 import { MediaModule } from '../media/media.module';
 import { UserModule } from '../user/user.module';
 import Configs from './config.util';
+import { BookModule } from '../book/book.module';
 
-const modules = [MailModule, AuthModule, MediaModule, UserModule];
+const modules = [MailModule, AuthModule, MediaModule, UserModule, BookModule];
 export const global_modules = [
   ConfigModule.forRoot({
     load: [...Configs],

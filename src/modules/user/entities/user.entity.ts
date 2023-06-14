@@ -15,6 +15,7 @@ import * as bcrypt from 'bcryptjs';
 import { ApiHideProperty, ApiProperty } from '@nestjs/swagger';
 import { Media } from '../../media/entities';
 import { RoleType } from '../../../contants/role-type';
+import { Order } from '../../book/entities/order.entity';
 
 @Entity({ name: 'users' })
 export class User extends EntityHelper {
@@ -29,6 +30,13 @@ export class User extends EntityHelper {
   @ApiProperty({ example: 'example@danimai.com' })
   @Column({ type: 'varchar', length: 255, unique: true })
   email: string;
+
+  @ApiProperty({ example: 3 })
+  @Column({ default: 100 })
+  points: number;
+
+  @OneToMany(() => Order, (order) => order.user)
+  orders: Order[];
 
   @ApiProperty({ example: 'Password@123' })
   @Column({ type: 'varchar', length: 255, nullable: true })
