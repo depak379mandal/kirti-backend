@@ -1,6 +1,10 @@
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
+## check Doc in localhost:8000/docs
+
+![image](https://github.com/depak379mandal/kirti-backend/assets/44017289/eea41153-b230-4df5-8500-42ac8853357c)
+
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
